@@ -25,10 +25,18 @@ export default function OrderList() {
           orders
           .filter((order) => sizeFilter === 'All' || order.size === sizeFilter)
           .map((order) => {
+            const toppingsObject = order.toppings || {
+              '1': false,
+              '2': false,
+              '3': false,
+              '4': false,
+              '5': false,
+            };
+            const selectedToppingsCount = Object.values(toppingsObject).filter(value => value).length;
             return (
               <li key={order.id}>
                 <div>
-                  Customer: {order.customer}, Size: {order.size}
+                  {order.customer} ordered a size {order.size} with {selectedToppingsCount} toppings 
                 </div>
               </li>
             )
