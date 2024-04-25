@@ -9,7 +9,7 @@ export default function PizzaForm() {
   const formData = useSelector(state => state.pizzaOrderForm)
   const [createOrder, { isLoading }] = useNewOrderMutation();
   const [errorMessage, setErrorMessage] = useState('');
-  console.log(formData)
+  
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (!formData.size) {
