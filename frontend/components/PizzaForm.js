@@ -9,7 +9,9 @@ export default function PizzaForm() {
   const formData = useSelector(state => state.pizzaOrderForm)
   const [createOrder, { isLoading }] = useNewOrderMutation();
   const [errorMessage, setErrorMessage] = useState('');
-  
+
+
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (!formData.size) {
@@ -37,6 +39,12 @@ export default function PizzaForm() {
 
   const handleInputChange = (e) => {
     const { value } = e.target;
+    setFullName(value);
+    if (value.length < 3) {
+      setErrorMessage("Order failed: fullName must be at least 3 characters");
+    } else {
+      setErrorMessage('');
+    }
     dispatch(setFullName(value));
   };
 
