@@ -18,6 +18,10 @@ export default function PizzaForm() {
       setErrorMessage("Order failed: size must be one of the following values: S, M, L");
       return;
     }
+    if (!formData.fullName) {
+      setErrorMessage("Order failed: fullName must be at least 3 characters");
+      return;
+    }
     if (formData.fullName) {
       try {
         const toppings = Object.keys(formData.toppings).filter(toppingId => formData.toppings[toppingId]);
@@ -39,6 +43,7 @@ export default function PizzaForm() {
 
   const handleInputChange = (e) => {
     const { value } = e.target;
+    console.log(value)
     setFullName(value);
     if (value.length < 3) {
       setErrorMessage("Order failed: fullName must be at least 3 characters");
