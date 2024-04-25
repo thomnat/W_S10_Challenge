@@ -39,7 +39,7 @@ export default function OrderList() {
             return (
               <li key={order.id}>
                 <div>
-                  {order.customer} ordered a size {order.size} with {selectedToppingsCount} toppings 
+                  {order.customer} ordered a size {order.size} with {selectedToppingsCount > 0 ? selectedToppingsCount : 'no'} toppings 
                 </div>
               </li>
             )
