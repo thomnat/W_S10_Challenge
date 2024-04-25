@@ -15,11 +15,6 @@ export default function OrderList() {
     setSizeFilter(size);
   };
 
-  
-
-
- 
-
   return (
     <div id="orderList">
       <h2>Pizza Orders</h2>
