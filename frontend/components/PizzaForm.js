@@ -19,7 +19,7 @@ export default function PizzaForm() {
       return;
     }
     if (!formData.fullName) {
-      setErrorMessage("Order failed: fullName must be at least 3 characters");
+      setErrorMessage("fullName is required");
       return;
     }
     if (formData.fullName) {
