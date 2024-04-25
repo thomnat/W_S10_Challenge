@@ -30,9 +30,8 @@ export const pizzaOrderFormSlice = createSlice({
       const { topping, isChecked } = action.payload;
       state.toppings[topping] = isChecked;
     },
-    resetForm(state, e) {
-      e.preventDefault()
-      id = getNextId();
+    resetForm(state) {
+      // id = getNextId();
       state.fullName = '';
       state.size = '';
       state.toppings = {
